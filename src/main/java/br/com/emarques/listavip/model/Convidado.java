@@ -4,18 +4,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity(name="convidado")
+@Entity(name = "convidado")
 public class Convidado {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String nome;
-	
+
 	private String email;
-	
+
 	private String telefone;
+
+	public Convidado() {
+	}
+
+	public Convidado(String nome, String email, String telefone) {
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+	}
 
 	public Long getId() {
 		return id;
@@ -48,7 +57,5 @@ public class Convidado {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
-	
 
 }
